@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 export const SingleInput = (props) =>
     <div className={`field ${props.isError == true ? 'error' : ''} `}>
         <input
+            
             type={props.inputType}
             placeholder={props.placeholder}
             name={props.name}
@@ -40,6 +41,7 @@ export class ChildSingleInput extends React.Component {
             <div className="field">
                 <label>{this.props.label}</label>
                 <input
+                    readOnly={this.props.readOnly}
                     type={this.props.inputType}
                     name={this.props.name}
                     value={this.props.value}

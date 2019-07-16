@@ -59,7 +59,7 @@ export default class EmployeeProfile extends React.Component {
             },
             type: "GET",
             contentType: "application/json",
-            dataType: "json",
+            dataType: "json", 
             success: function (res) {
                 let employerData = null;
                 if (res.employer) {

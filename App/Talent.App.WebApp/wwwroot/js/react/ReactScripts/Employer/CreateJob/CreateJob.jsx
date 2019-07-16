@@ -32,6 +32,7 @@ export default class CreateJob extends React.Component {
                     categories: { category: "", subCategory: "" },
                     jobType: [],
                     startDate: moment(),
+                    //expiryDate: moment(),
                     salary: { from: 0, to: 0 },
                     location: { country: "", city: ""}
                 }

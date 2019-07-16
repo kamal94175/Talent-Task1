@@ -59,6 +59,8 @@ namespace Talent.Services.Listing.Controllers
                     jobData.EmployerID = _userAppContext.CurrentUserId;
                     jobData.Status = JobStatus.Active;
                     jobData.CreatedOn = DateTime.UtcNow;
+                    Console.WriteLine("This is C#" + jobData.ExpiryDate);
+                    // (jobData.ExpiryDate);
                     string newJobID = _jobService.CreateJob(jobData);
                     message = "Job added successfully with id " + newJobID;
                 }
@@ -165,7 +167,7 @@ namespace Talent.Services.Listing.Controllers
 
         [HttpGet("getSortedEmployerJobs")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "employer, recruiter")]
-        public async Task<IActionResult> GetSortedEmployerJobs(int activePage, string sortbyDate, bool showActive, bool showClosed, bool showDraft, bool showExpired, bool showUnexpired, string employerId = null, int limit = 6)
+        public async Task<IActionResult> GetSortedEmployerJobs(int activePage, string sortbyDate, bool showActive, bool showClosed, bool showDraft, bool showExpired, bool showUnexpired, string employerId = null, int limit = 20)
         {
             try
             {
@@ -235,7 +237,7 @@ namespace Talent.Services.Listing.Controllers
                 else
                     return Json(new { Success = false, Message = "You are not authorised to update this job" });
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return Json(new { Success = false, Message = "Error while updating job" });
             }

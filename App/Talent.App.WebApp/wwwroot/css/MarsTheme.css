@@ -1460,4 +1460,20 @@ div.ReactTags__selected a.ReactTags__remove {
 .ui.dropdown.manage-jobs{
     margin-bottom: 10px;
 }
+.margin-left{
+    margin-left: 10%;
+}
+.ui.cards > .card {
+        margin: 2rem 1.5rem;
+}
+.ui.pagination.menu{
+    margin-top: 100px;
+}
+p.no-job {
+    margin:1rem 0;
+    font-size:1.2rem;
+}
+.bold {
+    font-weight:bold;
+}
 /*Manage jobs - End*/
